@@ -43,20 +43,27 @@ public class Morpion {
                 end = true;
             }
 
-            if (!grid.isFull() && !end && !playAgain) {
+            if (!grid.isFull() && !end ) {
 
-                AIPlays(ai);
-                grid.printGrid();
-                v = verifyEndGame();
-                if (v != 'n') {
-                    System.out.println("Les " + v + " ont gagné ! ");
-                    end = true;
+                if (!playAgain) {
+                    AIPlays(ai);
+                    System.out.println("L'IA joue : ");
+                    grid.printGrid();
+
+                    v = verifyEndGame();
+                    if (v != 'n') {
+                        System.out.println("Les " + v + " ont gagné ! ");
+                        end = true;
+                    }
                 }
+
+
 
             }else {
                 end = true;
             }
         }
+        System.out.println("Fin du jeu");
     }
 
     public void AIPlays(AI ai) {
@@ -82,7 +89,17 @@ public class Morpion {
             y = System.in.read();
         }
         while(y < 48 || y > 57);
-        grid.setXY(x-48, y-48, c);
+
+        int intX = x-48;
+        int intY = y-48;
+        if (allowed(intX, intY)) {
+            grid.setXY(intX, intY, c);
+            playAgain= false;
+        } else {
+            System.out.println("Merci de choisir une case libre");
+            playAgain = true;
+        }
+
     }
 
     public char verifyLine(){ // return x if x win, o if y win, n if nobody win
@@ -120,6 +137,32 @@ public class Morpion {
         return'n';
     }
 
+
+    public char verifyCol(){ // return x if x win, o if y win, n if nobody win
+        int cmptX;
+        int cmptY;
+        for(int j =0 ; j<3 ; j++){
+            cmptX = 0;
+            cmptY = 0;
+            for(int i=0; i<3; i++){
+                if(grid.getXY(i,j) =='x'){
+                    cmptX++;
+                }
+                if(grid.getXY(i,j) =='o'){
+                    cmptY++;
+                }
+
+                if(cmptX == 3){
+                    return 'x';
+                }
+                if(cmptY == 3){
+                    return 'o';
+                }
+            }
+        }
+
+        return'n';
+    }/*
     public char verifyCol(){
         for(int i=0; i<3; i++) {
             for(int j=0; j<3; j++) {
@@ -127,7 +170,7 @@ public class Morpion {
                 {
                     break;
                 }
-                if(j==2) { return 'x';}
+                if(j==3) { return 'x';}
             }
 
             for(int j=0; j<3; j++) {
@@ -135,11 +178,11 @@ public class Morpion {
                 {
                     break;
                 }
-                if(j==2) { return 'o';}
+                if(j==3) { return 'o';}
             }
         }
         return 'n';
-    }
+    }*/
 
     public char verifyEndGame() {
         char v;
@@ -159,4 +202,10 @@ public class Morpion {
 
 
     }
+
+    public boolean allowed(int x, int y) {
+        if (grid.getXY(x, y) == 'n') return true;
+        else return false;
+    }
+
 }

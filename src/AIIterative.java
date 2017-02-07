@@ -126,7 +126,7 @@ public class AIIterative implements AI{
         if (decisionTaken && (countO == 2 && countX ==0)) {
             decision.add(0, targetX);
             decision.add(1, targetY);
-        } else if((countO == 2 && countX ==0)|| (countX == 2 && countO == 0)) {
+        } else if(!decisionTaken &&((countO == 2 && countX ==0)|| (countX == 2 && countO == 0))) {
             decisionTaken= true;
             decision.add(0, targetX);
             decision.add(1, targetY);
