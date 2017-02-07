@@ -21,6 +21,7 @@ public class Grid {
             }
             System.out.print("\n");
         }
+        System.out.println("\n");
     }
 
     public void setXY(int x, int y, char carac){
