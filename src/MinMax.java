@@ -1,4 +1,5 @@
 import moves.Move;
+import moves.TttMove;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,16 +9,18 @@ import java.util.Map;
  */
 public class MinMax {
 
-    /*private Tree<Map<Move, Integer>> tree;
+    private Tree<Move> tree;
     private Game game;
 
 
     public void play(){
 
+
+        Move lastMove = game.lastMove();
         if(tree == null){
-            intializeTree(); // If it's the first AI move, we initialize the moves possibilities tree
+            intializeTree(lastMove); // If it's the first AI move, we initialize the moves possibilities tree
         }else{
-            updateTreeRoot(game.lastMove()); // Else, we update the moves tree after the player has played.
+            updateTreeRoot(lastMove); // Else, we update the moves tree after the player has played.
         }
 
 
@@ -29,9 +32,48 @@ public class MinMax {
         updateTreeRoot(nextMove); // The AI has played, we update the moves tree.
     }
 
-    private void intializeTree() {
-        
+
+
+
+
+    private void intializeTree(Move firstMove) {
+
+        tree.setRoot(new Tree.Node<>(firstMove));
+
+
+        initializeTree2(tree.getRoot(), 1);
     }
+
+    private void initializeTree2(Tree.Node<Move> node, int n){
+
+
+
+        game.play(node.getData());
+
+        if(game.isFinished() || n > 10){
+            node.getData().setEvaluation(game.evaluate());
+        }
+        else{
+            //int i = 0;
+            for (Move move : game.getMoves()) {
+
+                if(n != game.getTurn()){
+                    game.resetToTurn(n);
+                }
+
+                Tree.Node<Move> tempNode = new Tree.Node<>(move);
+                node.getChildren().add(tempNode);
+
+                tempNode.setParent(node);
+
+                initializeTree2(tempNode, n + 1);
+            }
+        }
+
+
+    }
+
+
 
 
     private Move getBestMove(){
@@ -45,30 +87,20 @@ public class MinMax {
 
 
     private void updateTreeRoot(Move move){
-
-        Integer x = tree.getRoot().getData().get(move);
-
-        Map<Move, Integer> mapLastMove = new Map<Move, Integer>;
-
-        mapLastMove.put(move, x);
-
-        tree.keepBranch(mapLastMove);
+        tree.keepBranch(move);
     }
 
-
-
     public MinMax(Game game){
-        tree = new Tree<>(new HashMap<Move, Integer>());
-
         this.game = game;
     }
 
 
-    public Tree<Map<Move, Integer>> getTree() {
+
+    public Tree<Move> getTree() {
         return tree;
     }
 
-    public void setTree(Tree<Map<Move, Integer>> tree) {
+    public void setTree(Tree<Move> tree) {
         this.tree = tree;
     }
 
@@ -78,5 +110,5 @@ public class MinMax {
 
     public void setGame(Game game) {
         this.game = game;
-    }*/
+    }
 }

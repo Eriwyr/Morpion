@@ -6,8 +6,18 @@ package moves;
 public abstract class Move {
     int turn;
     int player;
+    double evaluation;
 
 
+
+
+    public double getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(double evaluation) {
+        this.evaluation = evaluation;
+    }
 
     public int getTurn() {
         return turn;

@@ -16,15 +16,18 @@ public class Tree<T> {
 
 
     public Tree(T rootData) {
-        root = new Node<T>();
-        root.data = rootData;
+        root = new Node<T>(rootData);
         root.children = new ArrayList<Node<T>>();
     }
 
     public static class Node<T> {
         private T data;
         private Node<T> parent;
-        private List<Node<T>> children;
+        private ArrayList<Node<T>> children;
+
+        public Node(T data) {
+            this.data = data;
+        }
 
         public T getData() {
             return data;
@@ -42,14 +45,16 @@ public class Tree<T> {
             this.parent = parent;
         }
 
-        public List<Node<T>> getChildren() {
+        public ArrayList<Node<T>> getChildren() {
             return children;
         }
 
-        public void setChildren(List<Node<T>> children) {
+        public void setChildren(ArrayList<Node<T>> children) {
             this.children = children;
         }
     }
+
+
 
     public void keepBranch(T param) {
 
