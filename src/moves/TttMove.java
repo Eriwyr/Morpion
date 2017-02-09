@@ -1,7 +1,7 @@
+package moves;
+
 /**
  * Created by Mathieu on 09/02/2017.
  */
-abstract class Move {
-    int turn;
-
+public class TttMove {
 }
