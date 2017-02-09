@@ -24,4 +24,6 @@ public abstract class Move {
     public void setPlayer(int player) {
         this.player = player;
     }
+
+
 }

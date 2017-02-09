@@ -1,10 +1,13 @@
+import moves.Move;
+import moves.TttMove;
+
 import java.io.IOException;
-import java.util.Vector;
+import java.util.*;
 
 /**
  * Created by Eriwyr on 07/02/2017.
  */
-public class Morpion {
+public class Morpion extends Game {
     private Grid grid;
     private AI ai;
     private boolean end;
@@ -206,6 +209,24 @@ public class Morpion {
     public boolean allowed(int x, int y) {
         if (grid.getXY(x, y) == 'n') return true;
         else return false;
+    }
+
+    @Override
+    public ArrayList<Move> getPossibleMoves() {
+        ArrayList<Move> list = new ArrayList<Move>();
+        for (int i =0; i<3; i++) {
+            for (int j=0; j<3; j++) {
+                System.out.print(grid.getXY(i, j)+ " ");
+                if (grid.getXY(i, j) == 'n') {
+                    System.out.println("yes");
+                    TttMove move = new TttMove(i, j);
+                    System.out.println(move.getX());
+                    System.out.println(move.getY());
+                    list.add(move);
+                }
+            }
+        }
+         return list;
     }
 
 }

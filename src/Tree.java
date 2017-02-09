@@ -32,6 +32,6 @@ public class Tree<T> {
 
         }
 
-        this = this.root = root.children.get()
+    //    this = this.root = root.children.get();
     }
 }

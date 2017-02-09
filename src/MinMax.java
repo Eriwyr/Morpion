@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class MinMax {
 
-    private Tree<Map<Move, Integer>> tree;
+    /*private Tree<Map<Move, Integer>> tree;
     private Game game;
 
 
@@ -20,7 +20,7 @@ public class MinMax {
 
         game.play(nextMove);
 
-        tree.keepBranch(nextMove);
+        //tree.keepBranch(nextMove);
     }
 
 
@@ -53,5 +53,5 @@ public class MinMax {
 
     public void setGame(Game game) {
         this.game = game;
-    }
+    }*/
 }
