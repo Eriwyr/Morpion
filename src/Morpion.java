@@ -254,10 +254,10 @@ public class Morpion extends Game {
         }
          return returnValue;
     }
-   /* @Override
+    @Override
     public void resetToTurn(int n){
-
-    }*/
+        
+    }
 
     @Override
     protected void addMove(Move move) {
