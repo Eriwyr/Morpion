@@ -39,7 +39,7 @@ public class AIIterative implements AI{
         }
         return decision;
     }
-    
+
     @Override
     public Vector takeDecision(Grid grid) { //Method called every time it's the AI turn to
         decisionTaken = false; //When the turn begins, the AI has not yet taken a decision
