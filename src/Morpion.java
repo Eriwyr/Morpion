@@ -80,6 +80,17 @@ public class Morpion extends Game {
         }
 
     }
+    @Override
+    public void play(Move move){
+        if (move.getPlayer() == 0) { // 0 dans player => IA
+            grid.setXY(((TttMove)move).getX(),((TttMove)move).getY(), 'o');
+        } else { // 1 => joueur
+            grid.setXY(((TttMove)move).getX(),((TttMove)move).getY(), 'x');
+        }
+
+
+    }
+
     public void askForMore(char c) throws IOException {
         int x,y;
         System.out.println("Please input x: ");
