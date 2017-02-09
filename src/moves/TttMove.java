@@ -12,6 +12,11 @@ public class TttMove extends Move {
         return x;
     }
 
+    public TttMove(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public void setX(int x) {
         this.x = x;
     }

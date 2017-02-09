@@ -10,9 +10,12 @@ public abstract class Game {
 
     private boolean finished;
     private int turn;
-    private ArrayList<Move> moves;
+    protected ArrayList<Move> moves;
 
 
+    public ArrayList<Move> getMoves() {
+        return moves;
+    }
 
     public ArrayList<Move> getPossibleMoves(){System.out.println("getPossibleMoves function needs to be overwritten"); return new ArrayList<Move>();}
 
@@ -20,7 +23,7 @@ public abstract class Game {
 
     public void resetToTurn(int n){System.out.println("resetToTurn function needs to be overwritten"); }
 
-    private void addMove(Move move){System.out.println("addMoves function needs to be overwritten"); };
+    protected void addMove(Move move){System.out.println("addMoves function needs to be overwritten"); };
 
     public void play(Move move){System.out.println("play function needs to be overwritten"); addMove(move);};
 
