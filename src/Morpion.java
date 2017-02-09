@@ -216,17 +216,44 @@ public class Morpion extends Game {
         ArrayList<Move> list = new ArrayList<Move>();
         for (int i =0; i<3; i++) {
             for (int j=0; j<3; j++) {
-                System.out.print(grid.getXY(i, j)+ " ");
                 if (grid.getXY(i, j) == 'n') {
-                    System.out.println("yes");
-                    TttMove move = new TttMove(i, j);
-                    System.out.println(move.getX());
-                    System.out.println(move.getY());
-                    list.add(move);
+                    list.add(new TttMove(i, j));
                 }
             }
         }
          return list;
     }
+
+    @Override
+    public double evaluate(){
+        int returnValue;
+        switch (verifyEndGame()) {
+            case 'n':
+                returnValue = 0;
+                break;
+            case 'o':
+                returnValue = 1;
+                break;
+            case 'x':
+                returnValue = -1;
+                break;
+            default :
+                returnValue = 4;
+                break;
+        }
+         return returnValue;
+    }
+   /* @Override
+    public void resetToTurn(int n){
+
+    }*/
+
+    @Override
+    protected void addMove(Move move) {
+        moves.add(move);
+    }
+
+
+
 
 }

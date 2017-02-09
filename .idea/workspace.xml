@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc1d2137-8ddd-4e2d-bf38-9e1761fd46c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinMax.java" afterPath="$PROJECT_DIR$/src/MinMax.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.java" afterPath="$PROJECT_DIR$/src/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Morpion.java" afterPath="$PROJECT_DIR$/src/Morpion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tree.java" afterPath="$PROJECT_DIR$/src/Tree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moves/Move.java" afterPath="$PROJECT_DIR$/src/moves/Move.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moves/TttMove.java" afterPath="$PROJECT_DIR$/src/moves/TttMove.java" />
     </list>
     <ignored path="Morpion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,27 +37,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Morpion.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Morpion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Morpion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="215" column="17" selection-start-line="215" selection-start-column="17" selection-end-line="215" selection-end-column="17" />
+            <state relative-caret-position="368">
+              <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5212#5218#0" expanded="true" />
+                <element signature="e#6038#6039#0" expanded="true" />
+                <element signature="e#6069#6070#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="232">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#254#255#0" expanded="true" />
+                <element signature="e#282#283#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,13 +115,13 @@
         <option value="$PROJECT_DIR$/src/AIIterative.java" />
         <option value="$PROJECT_DIR$/src/Grid.java" />
         <option value="$PROJECT_DIR$/src/Move.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/moves/TttMove.java" />
         <option value="$PROJECT_DIR$/src/Tree.java" />
         <option value="$PROJECT_DIR$/src/MinMax.java" />
-        <option value="$PROJECT_DIR$/src/Morpion.java" />
         <option value="$PROJECT_DIR$/src/moves/Move.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/Morpion.java" />
       </list>
     </option>
   </component>
@@ -661,7 +660,7 @@
       <workItem from="1486490945179" duration="1489000" />
       <workItem from="1486566576606" duration="2502000" />
       <workItem from="1486630178219" duration="11258000" />
-      <workItem from="1486648467236" duration="2086000" />
+      <workItem from="1486648467236" duration="4794000" />
     </task>
     <task id="LOCAL-00001" summary="Tree added, MinMax started">
       <created>1486644401597</created>
@@ -674,7 +673,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22508000" />
+    <option name="totallyTimeSpent" value="25216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
@@ -818,6 +817,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5212#5218#0" expanded="true" />
+            <element signature="e#6038#6039#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -837,6 +838,8 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -893,6 +896,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5212#5218#0" expanded="true" />
+            <element signature="e#6038#6039#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -938,6 +943,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5212#5218#0" expanded="true" />
+            <element signature="e#6038#6039#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -983,6 +990,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5212#5218#0" expanded="true" />
+            <element signature="e#6038#6039#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1028,6 +1037,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5212#5218#0" expanded="true" />
+            <element signature="e#6038#6039#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1108,17 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Morpion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="215" column="17" selection-start-line="215" selection-start-column="17" selection-end-line="215" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5212#5218#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1150,11 +1150,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="232">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Morpion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5212#5218#0" expanded="true" />
+            <element signature="e#6038#6039#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
           </folding>
         </state>
       </provider>
