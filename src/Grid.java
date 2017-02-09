@@ -26,7 +26,6 @@ public class Grid {
 
     public void setXY(int x, int y, char carac){
             grid[x][y] = carac;
-
     }
 
     public boolean isEmpty()
