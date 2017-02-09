@@ -20,9 +20,9 @@ public abstract class Game {
 
     public void resetToTurn(int n){System.out.println("resetToTurn function needs to be overwritten"); }
 
-    static void addMove(Move move){System.out.println("addMoves function needs to be overwritten"); };
+    private void addMove(Move move){System.out.println("addMoves function needs to be overwritten"); };
 
-    public void play(Move move){System.out.println("play function needs to be overwritten"); };
+    public void play(Move move){System.out.println("play function needs to be overwritten"); addMove(move);};
 
     public int testFinished(){System.out.println("isFinished function needs to be overwritten"); return 0;};
 

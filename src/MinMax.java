@@ -1,5 +1,6 @@
 import moves.Move;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -8,15 +9,34 @@ import java.util.Map;
 public class MinMax {
 
     private Tree<Map<Move, Integer>> tree;
-    private Game testGame;
+    private Game game;
+
+
+    public void play(){
+
+        Move nextMove ;
+
+        nextMove = getBestMove();
+
+        game.play(nextMove);
+
+        tree.keepBranch(nextMove);
+    }
 
 
 
 
 
+    private Move getBestMove(){
+
+    }
 
 
+    public MinMax(Game game){
+        tree = new Tree<>(new HashMap<Move, Integer>());
 
+        this.game = game;
+    }
 
 
     public Tree<Map<Move, Integer>> getTree() {
@@ -27,11 +47,11 @@ public class MinMax {
         this.tree = tree;
     }
 
-    public Game getTestGame() {
-        return testGame;
+    public Game getGame() {
+        return game;
     }
 
-    public void setTestGame(Game testGame) {
-        this.testGame = testGame;
+    public void setGame(Game game) {
+        this.game = game;
     }
 }
