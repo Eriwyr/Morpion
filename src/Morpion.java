@@ -262,7 +262,9 @@ public class Morpion extends Game {
             moves.remove(i);
 
         }
-        
+
+        this.setTurn(n);
+
     }
 
     @Override

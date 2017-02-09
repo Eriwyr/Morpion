@@ -1,6 +1,8 @@
 import moves.Move;
 import moves.TttMove;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +20,7 @@ public class MinMax {
 
         Move lastMove = game.lastMove();
         if(tree == null){
-            intializeTree(lastMove); // If it's the first AI move, we initialize the moves possibilities tree
+            initializeTree(lastMove); // If it's the first AI move, we initialize the moves possibilities tree
         }else{
             updateTreeRoot(lastMove); // Else, we update the moves tree after the player has played.
         }
@@ -36,25 +38,32 @@ public class MinMax {
 
 
 
-    private void intializeTree(Move firstMove) {
+    private void initializeTree(Move firstMove) {
 
         tree.setRoot(new Tree.Node<>(firstMove));
-
 
         initializeTree2(tree.getRoot(), 1);
     }
 
-    private void initializeTree2(Tree.Node<Move> node, int n){
+
+    private double initializeTree2(Tree.Node<Move> node, int n){
+
+        ArrayList<Double> leafValues = new ArrayList<>();
 
 
+        if(n !=1){
 
-        game.play(node.getData());
+            game.play(node.getData());
+        }
 
         if(game.isFinished() || n > 10){
-            node.getData().setEvaluation(game.evaluate());
+
+            double eval = game.evaluate();
+            node.getData().setEvaluation(eval);
+            return eval;
         }
         else{
-            //int i = 0;
+
             for (Move move : game.getMoves()) {
 
                 if(n != game.getTurn()){
@@ -62,14 +71,24 @@ public class MinMax {
                 }
 
                 Tree.Node<Move> tempNode = new Tree.Node<>(move);
+
                 node.getChildren().add(tempNode);
 
                 tempNode.setParent(node);
 
-                initializeTree2(tempNode, n + 1);
+                tempNode.getData().setEvaluation(initializeTree2(tempNode, n + 1));
+
+                leafValues.add(tempNode.getData().getEvaluation());
+            }
+
+            if( n%2 == 0){
+
+                return Collections.min(leafValues);
+            }
+            else{
+                return Collections.max(leafValues);
             }
         }
-
 
     }
 
@@ -77,7 +96,18 @@ public class MinMax {
 
 
     private Move getBestMove(){
-        return null;
+
+        double max = -20;
+        Move bestMove = new TttMove(0,0);
+
+        for (Tree.Node<Move> childNode: tree.getRoot().getChildren()) {
+
+            if(childNode.getData().getEvaluation() > max){
+                bestMove = childNode.getData();
+            }
+
+        }
+        return bestMove;
     }
 
 
@@ -90,9 +120,15 @@ public class MinMax {
         tree.keepBranch(move);
     }
 
+
+
     public MinMax(Game game){
         this.game = game;
     }
+
+
+
+
 
 
 
