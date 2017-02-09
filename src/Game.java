@@ -9,13 +9,9 @@ import java.util.ArrayList;
 public abstract class Game {
 
     private boolean finished;
-    private int turn;
+    private int turn = 0;
     protected ArrayList<Move> moves;
 
-
-    public ArrayList<Move> getMoves() {
-        return moves;
-    }
 
     public ArrayList<Move> getPossibleMoves(){System.out.println("getPossibleMoves function needs to be overwritten"); return new ArrayList<Move>();}
 
