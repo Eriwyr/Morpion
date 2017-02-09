@@ -1,12 +1,14 @@
+package moves;
+
 /**
  * Created by Mathieu on 09/02/2017.
  */
-abstract class Move {
+public abstract class Move {
     int turn;
     int player;
 
 
-    
+
     public int getTurn() {
         return turn;
     }
