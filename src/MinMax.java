@@ -14,22 +14,47 @@ public class MinMax {
 
     public void play(){
 
-        Move nextMove ;
+        if(tree == null){
+            intializeTree(); // If it's the first AI move, we initialize the moves possibilities tree
+        }else{
+            updateTreeRoot(game.lastMove()); // Else, we update the moves tree after the player has played.
+        }
 
-        nextMove = getBestMove();
+
+        Move nextMove = getBestMove();
 
         game.play(nextMove);
 
-        tree.keepBranch(nextMove);
+
+        updateTreeRoot(nextMove); // The AI has played, we update the moves tree.
     }
 
-
-
+    private void intializeTree() {
+        
+    }
 
 
     private Move getBestMove(){
 
     }
+
+
+
+
+
+
+
+    private void updateTreeRoot(Move move){
+
+        Integer x = tree.getRoot().getData().get(move);
+
+        Map<Move, Integer> mapLastMove = new Map<Move, Integer>;
+
+        mapLastMove.put(move, x);
+
+        tree.keepBranch(mapLastMove);
+    }
+
 
 
     public MinMax(Game game){

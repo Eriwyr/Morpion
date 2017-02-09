@@ -29,7 +29,11 @@ public abstract class Game {
 
 
 
+    public Move lastMove(){
+        int size = this.getMoves().size();
 
+        return this.getMoves().get(size - 1);
+    }
 
 
 
@@ -54,5 +58,13 @@ public abstract class Game {
 
     public void setTurn(int turn) {
         this.turn = turn;
+    }
+
+    public ArrayList<Move> getMoves() {
+        return moves;
+    }
+
+    public void setMoves(ArrayList<Move> moves) {
+        this.moves = moves;
     }
 }

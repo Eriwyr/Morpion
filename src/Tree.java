@@ -13,6 +13,8 @@ public class Tree<T> {
 
     private Node<T> root;
 
+
+
     public Tree(T rootData) {
         root = new Node<T>();
         root.data = rootData;
@@ -23,15 +25,46 @@ public class Tree<T> {
         private T data;
         private Node<T> parent;
         private List<Node<T>> children;
-    }
 
-    public void keepBranch(){
-        int index ;
-
-        for(Node<T> node  : this.root.children){
-
+        public T getData() {
+            return data;
         }
 
-        this = this.root = root.children.get()
+        public void setData(T data) {
+            this.data = data;
+        }
+
+        public Node<T> getParent() {
+            return parent;
+        }
+
+        public void setParent(Node<T> parent) {
+            this.parent = parent;
+        }
+
+        public List<Node<T>> getChildren() {
+            return children;
+        }
+
+        public void setChildren(List<Node<T>> children) {
+            this.children = children;
+        }
+    }
+
+    public void keepBranch(T param) {
+
+        for (Node<T> node : this.root.children) {
+            if (param.equals(node.data)) {
+                this.root = node;
+            }
+        }
+    }
+
+    public Node<T> getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node<T> root) {
+        this.root = root;
     }
 }
