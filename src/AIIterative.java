@@ -24,6 +24,7 @@ public class AIIterative implements AI{
     public Vector nextAvailablePosition(Grid grid) {
         for (int i = 0; i<3; i++) {
             for (int j = 0; j<3; j ++){
+                // the AI goes through the entire grid, and sets the decision as soon as it finds an available spot
                 if(grid.getXY(i, j) == 'n') {
                     decisionTaken = true;
                     decision.add(0, i);
@@ -32,11 +33,13 @@ public class AIIterative implements AI{
                 }
             }
             if (decisionTaken) {
+                // if a decision is taken, we ccan stop looking
                 break;
             }
         }
         return decision;
     }
+    
     @Override
     public Vector takeDecision(Grid grid) { //Method called every time it's the AI turn to
         decisionTaken = false; //When the turn begins, the AI has not yet taken a decision
@@ -137,10 +140,14 @@ public class AIIterative implements AI{
 
     public void setDecision(){
     // The counters are analysed for every line, column and diagonals
-        if (decisionTaken && (countO == 2 && countX ==0)) { // if a decision is allready taken, but we found a positon where the AI can play and win
+        if (decisionTaken && (countO == 2 && countX ==0)) {
+            // if a decision is already taken, but  we found a position
+            // where the AI can play and win, it becomes the new decision
             decision.add(0, targetX);
             decision.add(1, targetY);
         } else if(!decisionTaken &&((countO == 2 && countX ==0)|| (countX == 2 && countO == 0))) {
+            // if we find in the line / column / diagonal tow of a certain letter, and the thrid place is empty, this becomes our decision :
+            //if there is two 'x', the AI blocks the payers. If there is two 'o', the AI wins.
             decisionTaken= true;
             decision.add(0, targetX);
             decision.add(1, targetY);
@@ -148,6 +155,7 @@ public class AIIterative implements AI{
     }
 
     void initializeCounters(){
+        //Counters initialized at every  line / column / diagonal
         countO =0;
         countX =0;
     }
