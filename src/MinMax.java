@@ -77,7 +77,7 @@ public class MinMax {
 
 
     private Move getBestMove(){
-
+        return null;
     }
 
 

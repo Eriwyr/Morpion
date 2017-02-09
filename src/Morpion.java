@@ -14,6 +14,7 @@ public class Morpion extends Game {
     private boolean playAgain;
     public Morpion()
     {
+        super();
         grid = new Grid();
         ai= new AIIterative();
         end = false;
@@ -256,6 +257,11 @@ public class Morpion extends Game {
     }
     @Override
     public void resetToTurn(int n){
+        for (int i = turn; i>n; i--){
+            grid.setXY(((TttMove)moves.get(i)).getX(), ((TttMove)moves.get(i)).getY(), 'n');
+            moves.remove(i);
+
+        }
         
     }
 
@@ -264,7 +270,11 @@ public class Morpion extends Game {
         moves.add(move);
     }
 
+    public Grid getGrid() {
+        return grid;
+    }
 
-
-
+    public void setGrid(Grid grid) {
+        this.grid = grid;
+    }
 }

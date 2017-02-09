@@ -9,10 +9,12 @@ import java.util.ArrayList;
 public abstract class Game {
 
     private boolean finished;
-    private int turn = 0;
+    protected int turn = 0;
     protected ArrayList<Move> moves;
 
-
+    public Game() {
+        moves = new ArrayList<Move>();
+    }
     public ArrayList<Move> getPossibleMoves(){System.out.println("getPossibleMoves function needs to be overwritten"); return new ArrayList<Move>();}
 
     public double evaluate(){System.out.println("evaluate function needs to be overwritten"); return 0;}
